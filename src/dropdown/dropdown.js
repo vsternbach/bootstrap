@@ -90,7 +90,7 @@ angular.module('ui.bootstrap.dropdown', ['ui.bootstrap.position'])
       });
     }
 
-    appendToBody = angular.isDefined($attrs.dropdownAppendToBody);
+    appendToBody = scope.$eval($attrs.dropdownAppendToBody) || false;
     keynavEnabled = angular.isDefined($attrs.keyboardNav);
 
     if (appendToBody && self.dropdownMenu) {
